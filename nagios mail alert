@@ -1,0 +1,36 @@
+Nagios mail alert in CentOS 7 using sendmail 
+
+In this video I have shown how to use sendmail service on Linux to send email outside. I have used google smtp service to send emails.
+
+Before start make sure your Linux is connected to internet.
+
+===========================================================
+Commands to refer:
+
+To install all the required packages
+# yum install procmail mailx sendmail sendmail-cf -y
+
+In your authinfo file, you need to add the below line (Please make sure to use your own username and password)
+
+AuthInfo:smtp.gmail.com "U:your_username" "P:your_password" "M:PLAIN"
+
+Changes in sendmail.mc
+define(`SMART_HOST', `smtp.gmail.com')
+FEATURE(`authinfo')
+
+Update sendmail.cf and authinfo.db file
+# m4 sendmail.mc 'closing_angle_bracket' sendmail.cf  
+# makemap hash authinfo  'opening_angle_bracket'   authinfo
+
+Restart your sendmail service
+# systemctl restart/start sendmail
+
+To send mail
+# mail -s “Subject” user@email.com
+Body
+Ctrl + D
+
+
+Now go to directory /usr/local/Nagios/etc/objects
+Add the recipient mail address in the contacts.cfg file
+Check if there is mail -s in the commands.cfg
