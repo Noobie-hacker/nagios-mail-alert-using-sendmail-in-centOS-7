@@ -1,8 +1,5 @@
 Nagios mail alert in CentOS 7 using sendmail 
 
-In this video I have shown how to use sendmail service on Linux to send email outside. I have used google smtp service to send emails.
-
-Before start make sure your Linux is connected to internet.
 
 ===========================================================
 Commands to refer:
