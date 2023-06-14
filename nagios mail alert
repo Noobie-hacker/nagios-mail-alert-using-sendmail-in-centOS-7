@@ -16,8 +16,8 @@ define(`SMART_HOST', `smtp.gmail.com')
 FEATURE(`authinfo')
 
 Update sendmail.cf and authinfo.db file
-# m4 sendmail.mc 'closing_angle_bracket' sendmail.cf  
-# makemap hash authinfo  'opening_angle_bracket'   authinfo
+# m4 sendmail.mc > sendmail.cf  
+# makemap hash authinfo <  authinfo
 
 Restart your sendmail service
 # systemctl restart/start sendmail
