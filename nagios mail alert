@@ -1,9 +1,6 @@
 Nagios mail alert in CentOS 7 using sendmail 
 
 
-===========================================================
-Commands to refer:
-
 To install all the required packages
 # yum install procmail mailx sendmail sendmail-cf -y
 
