@@ -4,6 +4,9 @@ Nagios mail alert in CentOS 7 using sendmail
 To install all the required packages
 # yum install procmail mailx sendmail sendmail-cf -y
 
+
+create a file "authinfo"
+# vi authinfo
 In your authinfo file, you need to add the below line (Please make sure to use your own username and password)
 
 AuthInfo:smtp.gmail.com "U:your_username" "P:your_password" "M:PLAIN"
